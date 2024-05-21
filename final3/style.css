@@ -1,0 +1,413 @@
+@font-face {
+    font-family: sf;
+    src: url(GothamMedium_1.ttf) format(truetype);
+}
+
+* {
+    font-family: sf;
+    transition: 0.3s;
+    letter-spacing: 0.2px;
+}
+
+body {
+    background-position-y: -50px;
+    padding-top: 40px;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden
+}
+
+@keyframes background-animation {
+    0% {
+        margin-top: -15vw;
+        margin-left: -15vw;
+    }
+
+    25% {
+        margin-top: 0vw;
+        margin-left: -40vw;
+    }
+
+    50% {
+        margin-top: -40vw;
+        margin-left: 0vw;
+    }
+
+    75% {
+        margin-top: -40vw;
+        margin-left: -40vw;
+    }
+
+    100% {
+        margin-top: -15vw;
+        margin-left: -15vw;
+    }
+}
+
+#background-image {
+    object-fit: cover;
+    width: 150vw;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(20px) brightness(0.5);
+    z-index: -1;
+    position: absolute;
+    animation: background-animation 0s infinite linear;
+}
+
+#passed-lyrics {
+    min-width: 300px;
+    min-height: auto;
+    margin: 0px 4vw;
+    color: rgb(44, 44, 44);
+}
+
+#btn-backward img,
+#btn-forward img {
+    width: 3vw;
+}
+
+#btn-backward,
+#btn-forward {
+    background: none;
+    border: none;
+    position: absolute;
+    top: 0;
+    margin: 5vh 20vw;
+    text-align: center;
+}
+
+#btn-backward {
+    margin: 5vh 16vw;
+}
+
+#current-lyric {
+    min-height: auto;
+    margin: 0px 4vw;
+    color: white;
+}
+
+#incoming-lyrics {
+    min-height: auto;
+    margin: 0px 4vw;
+    color: rgb(44, 44, 44);
+}
+
+body {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#track-image {
+    width: 100%;
+    margin-top: 20px;
+    box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.3);
+}
+
+.player-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 25%;
+    margin: 5vw 3vw;
+}
+
+.controls-container {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    height: 10%;
+    padding: 1vw;
+    margin-bottom: 0px;
+    text-align: center;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+.track-info {
+    text-align: center;
+    line-height: 1px;
+}
+
+#track-title {
+    color: white;
+    font-weight: 500;
+    font-size: 2vw;
+    width: 100%;
+    margin-bottom: 2.5vw;
+}
+
+#track-artist {
+    color: rgb(206, 206, 206);
+    font-size: 2vw;
+    margin-bottom: 2vw;
+}
+
+#track-album {
+    color: rgb(206, 206, 206);
+    font-size: 1.5vw;
+}
+
+#track-album:hover {
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.header .logo {
+    position: absolute;
+    top: 0;
+    margin: 5vh 3vw;
+    width: 10%;
+}
+
+#btn-play {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    font-size: large;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#btn-previous,
+#btn-next {
+    background: none;
+    border: none;
+    font-size: x-large;
+    color: white;
+    margin: 0px 5%;
+}
+
+#btn-previous:hover,
+#btn-next:hover {
+    color: rgba(0, 255, 42, 0.801);
+    transition: 0.1s;
+}
+
+#btn-repeat,
+#btn-shuffle {
+    background: none;
+    border: none;
+    font-size: x-large;
+    color: white;
+}
+
+#btn-repeat:hover,
+#btn-shuffle:hover,
+#btn-repeat:focus,
+#btn-shuffle:focus {
+    color: rgba(0, 255, 42, 0.801);
+    transition: 0.1s;
+}
+
+#lyrics-container {
+    width: 70%;
+    aspect-ratio: 2/1;
+    overflow-x: scroll;
+    overflow-y: auto;
+    text-align: left;
+    mask-image: linear-gradient(0deg, #000 85%, transparent), linear-gradient(180deg, #000 50%, transparent);
+    mask-composite: intersect;
+}
+
+h2 {
+    font-size: xx-large;
+    line-height: 30px;
+}
+
+h1 {
+    font-size: 2vw;
+    line-height: 2vw;
+}
+
+h1:hover {
+    cursor: pointer;
+    color: rgb(102, 102, 102);
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 90%;
+    outline: none;
+    height: 7px;
+    margin: 0 15px;
+    background-color: #444444;
+    border-radius: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 7px;
+    width: 7px;
+    background: #d4d4d4;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    -webkit-appearance: none;
+    height: 15px;
+    width: 15px;
+    transition: 0.2s;
+}
+
+input:hover {
+    cursor: pointer;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgba(0, 255, 42, 0.801)
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ffffff00;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ffffff00;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ffffff00;
+}
+
+.track-duration {
+    width: 100%;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#start-time,
+#end-time {
+    color: white;
+}
+
+#btn-like {
+    background: none;
+    border: none;
+    font-size: x-large;
+    color: white;
+    transition: font-size 1ms linear;
+}
+
+#btn-like:hover {
+    color: rgba(0, 255, 42, 0.801);
+    transition: 1ms linear;
+}
+
+#btn-like:active {
+    font-size: x;
+}
+
+.control-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+.playback-buttons {
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#volume-slider {
+    width: 60px;
+    margin-right: 40px;
+}
+
+.dropdown-button {
+    background-color: #1f1f1fa1;
+    color: white;
+    padding: 0.5vw;
+    font-size: 1vw;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 3vw;
+    border-radius: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 9vw;
+}
+
+.dropdown-button i {
+    margin: 0px 5px;
+}
+
+.dropdown-button img {
+    width: 2vw;
+    height: 2vw;
+    background-color: black;
+    border-radius: 50%;
+    border: none;
+    margin-right: 1vw;
+}
+
+.dropdown-button:hover,
+.dropdown-button:focus {
+    background-color: rgba(0, 255, 42, 0.801);
+}
+
+@keyframes dropdown {
+    0% {
+        opacity: 0;
+        margin-top: 5vw;
+    }
+
+    100% {
+        opacity: 1;
+        margin-top: 7vw;
+    }
+
+}
+
+.dropdown-content {
+    font-size: 1vw;
+    display: none;
+    position: absolute;
+    background-color: rgba(32, 32, 32, 0.705);
+    overflow: auto;
+    margin: 7vw 3vw;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    border-radius: 1vw;
+    animation: dropdown 100ms ease-out;
+}
+
+.dropdown-content a {
+    color: rgb(255, 255, 255);
+    padding: 1vw 1vw;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    color: rgba(0, 255, 42, 0.801);
+}
+
+.show {
+    display: block;
+}
